@@ -22,17 +22,6 @@ export const listReducer = (state = initialState, action) => {
         midAreaLists: all_lists,
       };
 
-    case ADD_LIST:
-      let old_list = state.midAreaLists;
-      let new_list_add = {
-        id: `midAreaList-${state.midAreaLists.length}`,
-        comps: ["MOVE"],
-      };
-      old_list.push(new_list_add);
-      return {
-        midAreaLists: old_list,
-      };
-
     default:
       return state;
   }

@@ -8,8 +8,3 @@ export const updateList = (id, new_list) => {
   };
 };
 
-export const addList = () => {
-  return {
-    type: ADD_LIST,
-  };
-};

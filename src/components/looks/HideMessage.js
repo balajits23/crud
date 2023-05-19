@@ -25,7 +25,6 @@ const HideMessage = ({ character, comp_id }) => {
   );
 };
 
-// mapping state to props
 const mapStateToProps = (state) => {
   return {
     character: state.character,

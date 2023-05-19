@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import Paper from "@material-ui/core/Paper";
 
 const GotoXY = ({ character, comp_id }) => {
   const [state, setState] = useState({
@@ -7,7 +8,6 @@ const GotoXY = ({ character, comp_id }) => {
     goto_y: 0,
   });
 
-  // go to posiiton X and Y
   const gotoXY = () => {
     const el = document.getElementById(`${character.active}-div`);
     el.style.position = "relative";
@@ -15,7 +15,7 @@ const GotoXY = ({ character, comp_id }) => {
     el.style.top = state.goto_y + "px";
   };
   return (
-    <div>
+    <Paper elevation={3}>
       <div className="text-center rounded bg-blue-500 p-2 my-3">
         <div className="grid grid-cols-2 my-2">
           <div className="text-white"> X</div>
@@ -49,11 +49,10 @@ const GotoXY = ({ character, comp_id }) => {
           Go to X : {state.goto_x} Y : {state.goto_y}
         </div>
       </div>
-    </div>
+    </Paper>
   );
 };
 
-// mapping state to component
 const mapStateToProps = (state) => {
   return {
     character: state.character,

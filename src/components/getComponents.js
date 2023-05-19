@@ -1,8 +1,7 @@
 import React from "react";
-import MoveY from "./motion/MoveY";
 import Move from "./motion/Move";
-import TurnClockwise from "./motion/TurnClockwise";
 import TurnAntiClockwise from "./motion/TurnAntiClockwise";
+import TurnClockwise from "./motion/TurnClockwise";
 import GotoXY from "./motion/Goto";
 import SayMessage from "./looks/SayMessage";
 import SayMessageWithTimer from "./looks/SayMessageWithTimer";
@@ -13,8 +12,7 @@ import HideMessage from "./looks/HideMessage";
 import Think from "./looks/Think";
 import ThinkWithTimer from "./looks/ThinkWithTimer";
 
-// fetch components based on different keys
-export const fetchComponent = (key, id) => {
+export const getComponent = (key, id) => {
   switch (key) {
     case "MOVE":
       return <Move comp_id={id} />;

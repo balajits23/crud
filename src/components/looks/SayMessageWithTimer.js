@@ -70,7 +70,6 @@ const SayMessageWithTimer = ({ character, comp_id }) => {
   );
 };
 
-// mapping state to component
 const mapStateToProps = (state) => {
   return {
     character: state.character,

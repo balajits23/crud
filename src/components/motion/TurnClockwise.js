@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { setCharacterAngle } from "../../redux/character/actions";
-import { MdRedo } from "react-icons/md";
+import RedoIcon from "@material-ui/icons/Redo";
+import Paper from "@material-ui/core/Paper";
 
 const TurnClockWise = ({ character, characterAngle, comp_id }) => {
   const [angle, setAngle] = useState(0);
 
-  // handle turn clockwise component
   const handleClick = () => {
     const el = document.getElementById(character.active);
     const character_angle = character.characters.find(
@@ -19,7 +19,7 @@ const TurnClockWise = ({ character, characterAngle, comp_id }) => {
   };
 
   return (
-    <div>
+    <Paper elevation={3}>
       <div className="text-center rounded bg-blue-500 p-2 my-3">
         <div className="grid grid-cols-2">
           <div className="text-white">Rotate By:</div>
@@ -35,25 +35,22 @@ const TurnClockWise = ({ character, characterAngle, comp_id }) => {
           className={`flex bg-blue-700 text-white px-2 py-1 mt-3 mb-1 text-sm cursor-pointer text-center`}
           onClick={() => handleClick()}
         >
-          <div className="flex mx-auto items-center">
-            <p>Turn</p>
-            <MdRedo className="text-2xl mx-2" />
-            <p>{angle} degrees</p>
+          <div className="flex mx-auto">
+            Turn
+            <RedoIcon className="mx-2" /> {angle} degrees
           </div>
         </div>
       </div>
-    </div>
+    </Paper>
   );
 };
 
-// mapping state to component
 const mapStateToProps = (state) => {
   return {
     character: state.character,
   };
 };
 
-// mapping function to component
 const mapDispatchToProps = (dispatch) => {
   return {
     characterAngle: (angle) => dispatch(setCharacterAngle(angle)),
